@@ -1,3 +1,5 @@
-import { environment } from '@rails/webpack'
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
-export default environment
+const environment = require('./environment')
+
+module.exports = environment.toWebpackConfig()
